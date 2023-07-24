@@ -1,0 +1,28 @@
+[workspace]
+members = [
+    "crates/cli",
+    "crates/core",
+    "crates/lexer",
+    "crates/parser",
+    "crates/interpreter",
+]
+default-members = ["crates/cli"]
+
+
+[profile.release]
+opt-level = 1
+debug = true
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+incremental = false
+
+[profile.dev]
+split-debuginfo = "unpacked"
+opt-level = 3
+
+[workspace.package]
+version = "1.0.0"
+edition = "2021"
+authors = ["Navaneeth Sajiv <navaneeth.sajiv@gmail.com>"]
+description = "A programming language I made for fun!"

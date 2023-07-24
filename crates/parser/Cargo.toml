@@ -1,0 +1,11 @@
+[package]
+name = "parser"
+version.workspace = true
+authors.workspace = true
+description.workspace = true
+edition.workspace = true
+
+[dependencies]
+core = { path = "../core/" }
+interpreter = { path = "../interpreter/" }
+log = "0.4.18"

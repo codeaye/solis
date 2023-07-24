@@ -1,6 +1,5 @@
-use std::rc::Rc;
-
 use crate::*;
+use std::rc::Rc;
 
 macro_rules! define_ast {
     ($root_name:ident{$($sub:ident{$($key:ident: $value:ty),*}),+}) => {
@@ -62,6 +61,9 @@ define_ast!(
             expression: Box<Expr>
         },
         BreakStmt {
+            location: Token
+        },
+        ContinueStmt {
             location: Token
         },
         Var {
